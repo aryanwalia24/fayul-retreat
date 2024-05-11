@@ -20,9 +20,9 @@ const Footer = () => {
               <div className="fch">Contact</div>
               <div className="fcc">
                 <div>A: Chaka road, village kalpa, district kinnaur, H.p. </div>
-                <div>P: +91 9878877409</div>
-                <div>P: 9878877409</div>
-                <div>E: ayushmaan207.be22@chitkara.edu.in</div>
+                <div>P: XXXXXXXXXXX9</div>
+                <div>P: 9XXXXXXXXX9</div>
+                <div>E: @chitkara.edu.in</div>
               </div>
             </div>
             <div className="fc1">
