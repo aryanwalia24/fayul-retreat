@@ -1,15 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/booknow.css';
+import '../../css/RoomSection.css';
 
 const RoomSection = () => {
   const [sortByPriceAscending, setSortByPriceAscending] = useState(false);
   const [sortByNameAscending, setSortByNameAscending] = useState(false);
   const [showPricesInUSD, setShowPricesInUSD] = useState(true);
   const [originalPricesUSD, setOriginalPricesUSD] = useState([]);
+  const [selectedRooms, setSelectedRooms] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     initializeOriginalPrices();
+    const storedSelectedRooms = localStorage.getItem('selectedRooms');
+    if (storedSelectedRooms) {
+      setSelectedRooms(JSON.parse(storedSelectedRooms));
+    }
   }, []);
+
+  const calculateTotalPrice = useCallback(() => {
+    const totalPrice = selectedRooms.reduce((acc, room) => {
+      const price = parseFloat(room.split('₹')[1].replace(",", "").trim());
+      return acc + price;
+    }, 0);
+    setTotalPrice(totalPrice);
+  }, [selectedRooms]);
+
+  useEffect(() => {
+    calculateTotalPrice();
+  }, [selectedRooms, calculateTotalPrice]);
 
   const initializeOriginalPrices = () => {
     const priceElements = document.querySelectorAll(".siPrice");
@@ -81,6 +101,28 @@ const RoomSection = () => {
     arrow.textContent = ascending ? "▲" : "▼";
   };
 
+  const addRoomToSummary = (roomName) => {
+    if (!selectedRooms.includes(roomName)) {
+      const updatedSelectedRooms = [...selectedRooms, roomName];
+      setSelectedRooms(updatedSelectedRooms);
+      localStorage.setItem('selectedRooms', JSON.stringify(updatedSelectedRooms));
+    }
+  };
+
+  const removeRoomFromSummary = (roomName) => {
+    const updatedSelectedRooms = selectedRooms.filter(room => room !== roomName);
+    setSelectedRooms(updatedSelectedRooms);
+    localStorage.setItem('selectedRooms', JSON.stringify(updatedSelectedRooms));
+  };
+
+  const handleAddRoomClick = (roomName) => {
+    addRoomToSummary(roomName);
+  };
+
+  const handleRemoveRoomClick = (roomName) => {
+    removeRoomFromSummary(roomName);
+  };
+
   return (
     <section className="room">
       <div className="rooms">
@@ -111,15 +153,13 @@ const RoomSection = () => {
                 <span className="siFeatures">"Room Content"</span>
                 <span className="siCancelOp">
                   <img src="tick.svg" alt="" />Cancellation Policy</span>
-                <span className="siCancelOpSubtitle">You can cancel later, so lock in this great price today!</span>
+                  <span className="siCancelOpSubtitle">You can cancel later, so lock in this great price today!</span>
               </div>
               <div className="siDetails">
                 <div className="siDetailTexts">
                   <span className="siPrice">$259</span>
                   <span className="siTaxOp">Includes taxes and fees</span>
-                  <a href="res1.html">
-                    <button className="siCheckButton">Check Availability</button>
-                  </a>
+                  <button className="siCheckButton" onClick={() => handleAddRoomClick("Mud Room ₹21,238")}>Add Room</button>
                 </div>
               </div>
             </div>
@@ -134,16 +174,15 @@ const RoomSection = () => {
                 <span className="siSubtitle">MudRoom</span>
                 <span className="siFeatures">"Room Content"</span>
                 <span className="siCancelOp">
-                  <img src="tick.svg" alt="" />Cancellation Policy</span>
+                  <img src="tick.svg" alt="" />Cancellation Policy
+                </span>
                 <span className="siCancelOpSubtitle">You can cancel later, so lock in this great price today!</span>
               </div>
               <div className="siDetails">
                 <div className="siDetailTexts">
                   <span className="siPrice">$130</span>
                   <span className="siTaxOp">Includes taxes and fees</span>
-                  <a href="res1.html">
-                    <button className="siCheckButton">Check Availability</button>
-                  </a>
+                  <button className="siCheckButton" onClick={() => handleAddRoomClick("Hammock ₹10,660")}>Add Room</button>
                 </div>
               </div>
             </div>
@@ -158,32 +197,54 @@ const RoomSection = () => {
                 <span className="siSubtitle">MudRoom</span>
                 <span className="siFeatures">"Room Content"</span>
                 <span className="siCancelOp">
-                  <img src="tick.svg" alt="" />Cancellation Policy</span>
+                  <img src="tick.svg" alt="" />Cancellation Policy
+                  </span>
                 <span className="siCancelOpSubtitle">You can cancel later, so lock in this great price today!</span>
               </div>
               <div className="siDetails">
                 <div className="siDetailTexts">
                   <span className="siPrice">$190</span>
                   <span className="siTaxOp">Includes taxes and fees</span>
-                  <a href="res1.html">
-                    <button className="siCheckButton">Check Availability</button>
-                  </a>
+                  <button className="siCheckButton customButton" onClick={() => handleAddRoomClick("Prem Wooden ₹15,580")}>Add Room</button>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
         <div className="booking-sum">
           <h2 className="book-sum">Booking Summary</h2>
           <div className="no-roomdiv" id="no_room_selected">
-            <span className="vres-stripe be-noroom"></span>
-            <img className="noroom-img" src="https://live.ipms247.com/booking/templates/resui/img/norooms.png" alt="" />
-            <h3>
-              No Room(s)<br />
-              <small>Selected</small>
-            </h3>
-            <div id="lookinguser" className="user_alert"></div>
+            {selectedRooms.length === 0 ? (
+              <>
+                <span className="vres-stripe be-noroom"></span>
+                <img className="noroom-img" src="https://live.ipms247.com/booking/templates/resui/img/norooms.png" alt="" />
+                <h3>
+                  No Room(s)<br />
+                  <small>Selected</small>
+                </h3>
+                <div id="lookinguser" className="user_alert"></div>
+              </>
+            ) : (
+              <div>
+                <ul>
+                  {selectedRooms.map((room, index) => (
+                    <li key={index}>
+                      {room}
+                      <button className="cross_svg" onClick={() => handleRemoveRoomClick(room)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#EA3323">
+                          <path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z"/>
+                        </svg>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <p>Total Price: Rs. {totalPrice.toFixed(2)}</p> {/* Total Price */}
+                <Link to={{
+                  pathname: "/checkout",
+                  state: { totalPrice } 
+                }}>Proceed to Payment</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
