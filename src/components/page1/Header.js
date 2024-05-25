@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <div className="stwa">
-        <a href="https://wa.me/+918847505135?text=hello">
+        <a href="https://wa.me/+91XXXXXXXXXX?text=hello">
           <img src="images/whatsapp.png" alt="" />
         </a>
       </div>
