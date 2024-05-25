@@ -22,7 +22,7 @@ const Footer = () => {
                 <div>A: Chaka road, village kalpa, district kinnaur, H.p. </div>
                 <div>P: XXXXXXXXXXX9</div>
                 <div>P: 9XXXXXXXXX9</div>
-                <div>E: @chitkara.edu.in</div>
+                <div>E: @</div>
               </div>
             </div>
             <div className="fc1">

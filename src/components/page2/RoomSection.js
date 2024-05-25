@@ -226,6 +226,11 @@ const RoomSection = () => {
               </>
             ) : (
               <div>
+              <p>Total Price: Rs. {totalPrice.toFixed(2)}</p> {/* Total Price */}
+                <Link to={{
+                  pathname: "/checkout",
+                  state: { totalPrice } 
+                }}>Proceed to Payment</Link>
                 <ul>
                   {selectedRooms.map((room, index) => (
                     <li key={index}>
@@ -238,11 +243,7 @@ const RoomSection = () => {
                     </li>
                   ))}
                 </ul>
-                <p>Total Price: Rs. {totalPrice.toFixed(2)}</p> {/* Total Price */}
-                <Link to={{
-                  pathname: "/checkout",
-                  state: { totalPrice } 
-                }}>Proceed to Payment</Link>
+               
               </div>
             )}
           </div>
