@@ -21,7 +21,7 @@ const Header = () => {
         </a>
       </div>
       <header>
-        <video autoPlay muted loop id="myVideo">
+        <video autoPlay muted loop id="myVideo" preload="auto">
           <source src="images/mount.mp4" type="video/mp4" />
         </video>
         <div className="grad">
