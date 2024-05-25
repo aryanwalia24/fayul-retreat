@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../../css/style.css';
 
 const Footer = () => {
@@ -6,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="foot">
         <div className="f0">
-          <img src="images/logo.png" alt="" />
+          <img src="images/logo.png" alt="Fayul Retreat Logo" />
         </div>
         <div className="f1">
           <div className="about" id="about">
@@ -19,10 +20,9 @@ const Footer = () => {
             <div className="fc1">
               <div className="fch">Contact</div>
               <div className="fcc">
-                <div>A: Chaka road, village kalpa, district kinnaur, H.p. </div>
-                <div>P: XXXXXXXXXXX9</div>
-                <div>P: 9XXXXXXXXX9</div>
-                <div>E: @</div>
+                <div>Address: Chaka road, village kalpa, district kinnaur, H.p.</div>
+                <div>Ph.: +91 78074 11180</div>
+                <div>Email: fayulretreat@gmail.com</div>
               </div>
             </div>
             <div className="fc1">
@@ -30,18 +30,23 @@ const Footer = () => {
               <div className="fcc">
                 <span>Follow us on social media and keep in touch with Fayul Retreat.</span>
                 <div className="icons">
-                  <button>
-                    <i className="fa-brands fa-instagram"></i>
-                  </button>
-                  <button>
-                    <i className="fa-brands fa-whatsapp"></i>
-                  </button>
-                  <button>
-                    <i className="fa-regular fa-envelope"></i>
-                  </button>
-                  <button>
-                    <i className="fa-brands fa-airbnb"></i>
-                  </button>
+                  <a href="https://www.instagram.com/fayul_retreat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-brands fa-instagram"></i>
+                    </button>
+                  </a>
+                  <a href="https://wa.me/+917807411180" target="_blank" rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-brands fa-whatsapp"></i>
+                    </button>
+                  </a>
+                  <a href="mailto:fayulretreat@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-regular fa-envelope"></i>
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -49,11 +54,10 @@ const Footer = () => {
         </div>
         <hr />
         <div className="f2">
-          By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © Fayul Retreat™ Ltd. All rights reserved.
+          By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy, and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © Fayul Retreat™ Ltd. All rights reserved.
         </div>
       </div>
     </footer>
   );
 }
-
 export default Footer;

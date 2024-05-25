@@ -157,9 +157,9 @@ const RoomSection = () => {
               </div>
               <div className="siDetails">
                 <div className="siDetailTexts">
-                  <span className="siPrice">$259</span>
+                  <span className="siPrice">₹3,899</span>
                   <span className="siTaxOp">Includes taxes and fees</span>
-                  <button className="siCheckButton" onClick={() => handleAddRoomClick("Mud Room ₹21,238")}>Add Room</button>
+                  <button className="siCheckButton" onClick={() => handleAddRoomClick("Mud Room ₹3,899")}>Add Room</button>
                 </div>
               </div>
             </div>
@@ -203,9 +203,9 @@ const RoomSection = () => {
               </div>
               <div className="siDetails">
                 <div className="siDetailTexts">
-                  <span className="siPrice">$190</span>
+                  <span className="siPrice">₹6,499</span>
                   <span className="siTaxOp">Includes taxes and fees</span>
-                  <button className="siCheckButton customButton" onClick={() => handleAddRoomClick("Prem Wooden ₹15,580")}>Add Room</button>
+                  <button className="siCheckButton customButton" onClick={() => handleAddRoomClick("Prem Wooden ₹6,499")}>Add Room</button>
                 </div>
               </div>
             </div>

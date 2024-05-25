@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import '../../css/style.css'
@@ -12,18 +11,18 @@ const MainSection = () => {
         <div className="intro">
           <div className="ir">
             <div className="iru">
-              "Lorem ipsum dolor sit amet."
+              ~Fayul Retreat
             </div>
             <div className="ird">
               <img src="images/map.png" alt="" />
               <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, culpa corrupti quidem modi odio distinctio minus maiores perferendis quis minima fugit quia quod blanditiis.
+                Welcome to Fayul Retreat, a luxurious haven in Kinnaur, Himachal Pradesh. Experience breathtaking Himalayan views, exceptional hospitality, and serene tranquility in a perfect blend of modern comfort and traditional charm.
               </div>
             </div>
           </div>
           <div className="il">
             <div className="hed1">
-              <div className="back">welcome</div>
+              <div className="back">Welcome</div>
               <div className="front">Fayul Retreat</div>
             </div>
             <div className="contt">
@@ -41,7 +40,7 @@ const MainSection = () => {
 
         <div id="rooms">
           <div className="hed">
-            <div className="back">explore</div>
+            <div className="back">Explore</div>
             <div className="front">Our Rooms</div>
           </div>
           <div className="rcont">
@@ -51,13 +50,12 @@ const MainSection = () => {
               </div>
               <div className="textr">
                 <div className="rtext">
-                  <span className="ch">room 1</span>
+                  <span className="ch">Mud Room</span>
                   <span className="ct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa!</span>
                 </div>
                 <div className="rbook">
-                  <Link to="/booknow" className="cbn">Book Now</Link>
                   <div className="cprc">
-                    <span className="cu">Rs 1200</span>
+                    <span className="cu">Rs 3,499</span>
                     <span className="cd">Per Night</span>
                   </div>
                 </div>
@@ -69,13 +67,12 @@ const MainSection = () => {
               </div>
               <div className="textr">
                 <div className="rtext">
-                  <span className="ch">room 2</span>
+                  <span className="ch">Premium Wooden Room</span>
                   <span className="ct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa!</span>
                 </div>
                 <div className="rbook">
-                  <Link to="/booknow" className="cbn">Book Now</Link>
                   <div className="cprc">
-                    <span className="cu">Rs 1200</span>
+                    <span className="cu">Rs 6,499</span>
                     <span className="cd">Per Night</span>
                   </div>
                 </div>
@@ -87,13 +84,12 @@ const MainSection = () => {
               </div>
               <div className="textr">
                 <div className="rtext">
-                  <span className="ch">room 3</span>
+                  <span className="ch">Glamping dome</span>
                   <span className="ct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa!</span>
                 </div>
                 <div className="rbook">
-                  <Link to="/booknow" className="cbn">Book Now</Link>
                   <div className="cprc">
-                    <span className="cu">Rs 1200</span>
+                    <span className="cu">Rs 6,899</span>
                     <span className="cd">Per Night</span>
                   </div>
                 </div>
@@ -105,13 +101,12 @@ const MainSection = () => {
               </div>
               <div className="textr">
                 <div className="rtext">
-                  <span className="ch">room 4</span>
+                  <span className="ch">Hammock</span>
                   <span className="ct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa!</span>
                 </div>
                 <div className="rbook">
-                  <Link to="/booknow" className="cbn">Book Now</Link>
                   <div className="cprc">
-                    <span className="cu">Rs 1200</span>
+                    <span className="cu">Rs </span>
                     <span className="cd">Per Night</span>
                   </div>
                 </div>
@@ -164,10 +159,14 @@ const MainSection = () => {
             </div>
           </div>
           <div className="itg">
-            <button className="inb">
-              <span>Follow us on Instagram</span>
-              <i className="fa-brands fa-instagram"></i>
-            </button>
+              <a href="https://www.instagram.com/fayul_retreat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                    target="_blank" 
+                    rel="noopener noreferrer">      
+                    <button className="inb">
+                      <span>Follow us on Instagram</span>
+                      <i className="fa-brands fa-instagram"></i>
+                    </button>
+              </a>
           </div>
         </div>
       </div>

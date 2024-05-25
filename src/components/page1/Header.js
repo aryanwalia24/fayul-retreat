@@ -1,5 +1,6 @@
-import React, { useState} from 'react';
-import { Link} from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import '../../css/style.css';
 
 const Header = () => {
@@ -16,8 +17,8 @@ const Header = () => {
   return (
     <>
       <div className="stwa">
-        <a href="https://wa.me/+91XXXXXXXXXX?text=hello">
-          <img src="images/whatsapp.png" alt="" />
+        <a href="https://wa.me/+917807411180?text=hello">
+          <img src="images/whatsapp.png" alt="WhatsApp" />
         </a>
       </div>
       <header>
@@ -30,22 +31,22 @@ const Header = () => {
             <h1>Fayul Retreat</h1>
           </div>
         </div>
-        <div className={`nav ${menuVisible? 'show1' : ''}`}>
+        <div className={`nav ${menuVisible ? 'show1' : ''}`}>
           <div className="navup">
             <div className="logo">
               <img src="images/logo.png" alt="logo" />
             </div>
             <span className="secondary-btn" onClick={toggleMenu}>
-              <i className={`material-symbols-outlined ${menuVisible? 'show2' : ''}`}>
+              <i className={`material-symbols-outlined ${menuVisible ? 'show2' : ''}`}>
                 menu
               </i>
             </span>
           </div>
-          <div className={`navdown ${menuVisible? 'show3' : ''}`}>
+          <div className={`navdown ${menuVisible ? 'show3' : ''}`}>
             <div className="lul">
               <ul>
                 <li>
-                  <a href="index.html">home</a>
+                  <a href="#stwa">home</a>
                 </li>
                 <li>
                   <a href="#about">about</a>
@@ -73,25 +74,27 @@ const Header = () => {
               <div>
                 <div className="fcc1">
                   <div>
-                    A: Chaka road, village kalpa, district kinnaur, H.p.
+                    Address: Chaka road, village kalpa, district kinnaur, H.P.
                   </div>
-                  <div>P: +91 9878877409</div>
-                  <div>P: 9878877409</div>
-                  <div>E: ayushmaan207.be22@chitkara.edu.in</div>
+                  <div>Ph.: +91 78074 11180</div>
+                  <div>Email: fayulretreat@gmail.com</div>
                 </div>
                 <div className="icons">
-                  <button>
-                    <i className="fa-brands fa-instagram" />
-                  </button>
-                  <button>
-                    <i className="fa-brands fa-whatsapp" />
-                  </button>
-                  <button>
-                    <i className="fa-regular fa-envelope" />
-                  </button>
-                  <button>
-                    <i className="fa-brands fa-airbnb" />
-                  </button>
+                  <a href="https://www.instagram.com/fayul_retreat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-brands fa-instagram" />
+                    </button>
+                  </a>
+                  <a href="https://wa.me/917807411180" target="_blank" rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-brands fa-whatsapp" />
+                    </button>
+                  </a>
+                  <a href="mailto:fayulretreat@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <button>
+                      <i className="fa-regular fa-envelope" />
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
